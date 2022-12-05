@@ -12,9 +12,9 @@ export const TweetCardDetails = ({ tweet }) => {
           <h4 className="username">@{tweet.user.username}</h4>
         </div>
       </div>
-      <p>{tweet.text}</p>
+      <p>{tweet.content.text}</p>
       <p className="dateTime">
-        {tweet.tweetTime} - {tweet.tweetDate}
+        {tweet.content.tweetTime} - {tweet.content.tweetDate}
       </p>
     </div>
   );
