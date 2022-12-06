@@ -19,11 +19,11 @@ export const TweetCardDetails = ({ tweet, handleDelete }) => {
       </div>
       <p>{tweet.content.text}</p>
       <p className="dateTime">
-       {tweet.content.date} {tweet.content.time}       
-      </p>
-      <button onClick={handleDelete} style={{ float: "right" }}>
+        {tweet.content.date} {tweet.content.time}
+        <button onClick={handleDelete} style={{ float: "right" }}>
           <AiFillDelete />
         </button>
+      </p>
     </div>
   );
 };
