@@ -1,10 +1,15 @@
 import React from "react";
+import { AiFillDelete } from "react-icons/ai";
 
-export const TweetCardDetails = ({ tweet }) => {
+export const TweetCardDetails = ({ tweet, handleDelete }) => {
   return (
     <div className="tweetDetails">
       <div className="card_header">
-        <img className="avatar" src={tweet.user.avatarUrl} alt={tweet.user.username} />
+        <img
+          className="avatar"
+          src={tweet.user.avatarUrl}
+          alt={tweet.user.username}
+        />
         <div className="tweetAuthor">
           <h3 style={{ margin: 0 }}>
             {tweet.user.name} {tweet.user.surname}
@@ -14,8 +19,11 @@ export const TweetCardDetails = ({ tweet }) => {
       </div>
       <p>{tweet.content.text}</p>
       <p className="dateTime">
-        {tweet.content.tweetTime} - {tweet.content.tweetDate}
+       {tweet.content.date} {tweet.content.time}       
       </p>
+      <button onClick={handleDelete} style={{ float: "right" }}>
+          <AiFillDelete />
+        </button>
     </div>
   );
 };

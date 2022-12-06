@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #242d34;
+  color:white
 }
 
 .App-logo {
@@ -42,7 +42,9 @@
   background-color: white;
   max-width: 30em;
   text-align: left;
-  margin: 2em;
+  color:#282c34;
+  width: 50%;
+  margin: 0 auto 2em;
 }
 
 .tweetDetails {
@@ -72,4 +74,9 @@
   position: relative;
   display: flex;
   gap: 1em;
+}
+
+.title {
+  margin-top: 0;
+  padding-top: 2em;
 }
