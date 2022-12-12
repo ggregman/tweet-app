@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { TweetContainer } from "./components/TweetContainer";
 import { getTweetList } from "./mock/getTweetList";
 
 function App() {
-  const [tweetList, setTweetList] = useState(getTweetList());
+  const [tweetList, setTweetList] = useState();
+
+  useEffect(() => {
+    setTweetList(getTweetList());
+  }, []);
 
   const handleAddTweet = () => {
     const tempTweet = [...tweetList];
@@ -37,7 +41,7 @@ function App() {
     <div className="App">
       <h1 className="title">Today's Tweets</h1>
       <button onClick={handleAddTweet}>Add Tweet</button>
-      {tweetList.length > 0 ? (
+      {tweetList && tweetList.length > 0 ? (
         <TweetContainer tweetList={tweetList} handleDelete={handleDelete} />
       ) : (
         <h2 style={{ color: "white" }}>No tweets</h2>
