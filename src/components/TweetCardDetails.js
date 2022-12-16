@@ -1,7 +1,7 @@
 import React from "react";
-import { AiFillDelete } from "react-icons/ai";
+import { AiFillDelete, AiOutlineHeart } from "react-icons/ai";
 
-export const TweetCardDetails = ({ tweet, handleDelete }) => {
+export const TweetCardDetails = ({ tweet, handleDelete, handleAddLikes }) => {
   return (
     <div className="tweetDetails">
       <div className="card_header">
@@ -18,12 +18,28 @@ export const TweetCardDetails = ({ tweet, handleDelete }) => {
         </div>
       </div>
       <p>{tweet.content.text}</p>
-      <p className="dateTime">
-        {tweet.content.date} {tweet.content.time}
-        <button onClick={handleDelete} style={{ float: "right" }}>
-          <AiFillDelete />
-        </button>
-      </p>
+      <p style={{ color: "#C0C0C0" }}> {tweet.content.dateTime}</p>
+      <div style={{ alignContent: "bottom" }}>
+        <div style={{ float: "right" }}>
+          <button onClick={handleDelete}>
+            <AiFillDelete />
+          </button>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            position: "relative",
+            gap: "0.2rem",
+            alignItems: "center",
+          }}
+        >
+          <button onClick={handleAddLikes}>
+            <AiOutlineHeart />
+          </button>
+          <p>{tweet.content.likes}</p>
+        </div>
+      </div>
     </div>
   );
 };
