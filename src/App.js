@@ -1,15 +1,11 @@
-import { useEffect, useState } from "react";
+import { DateTime } from "luxon";
+import { useCallback, useState } from "react";
+import { getTweetList } from "./api/getTweetList";
 import "./App.css";
 import { TweetContainer } from "./components/TweetContainer";
-import { getTweetList } from "./api/getTweetList";
-import { DateTime } from "luxon";
 
 function App() {
-  const [tweetList, setTweetList] = useState();
-
-  useEffect(() => {
-    setTweetList(getTweetList());
-  }, []);
+  const [tweetList, setTweetList] = useState(useCallback(getTweetList, []));
 
   const handleAddTweet = () => {
     const tempTweet = [...tweetList];
