@@ -5,7 +5,7 @@ export const tweetMock = [
     id: Math.floor(Math.random() * 1000),
     user: {
       avatarUrl:
-        "https://pickaface.net/gallery/avatar/20120409_230759_3646_Fake.png",
+        "https://i.pravatar.cc/100",
       surname: "Bugatti",
       name: "Emma",
       username: "emmabugatti",
@@ -24,7 +24,7 @@ export const tweetMock = [
     id: Math.floor(Math.random() * 1000),
     user: {
       avatarUrl:
-        "https://pickaface.net/gallery/avatar/87437122_161016_0409_2nywbi3.png",
+        "https://i.pravatar.cc/100",
       surname: "Ferrari",
       name: "Enzo",
       username: "enzoferrari",
@@ -43,7 +43,7 @@ export const tweetMock = [
     id: Math.floor(Math.random() * 1000),
     user: {
       avatarUrl:
-        "https://pickaface.net/gallery/avatar/20160625_050020_889_FAKE.png",
+        "https://i.pravatar.cc/100",
       surname: "Rossi",
       name: "Mario",
       username: "rossimario69",
