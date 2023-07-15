@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiFillDelete, AiOutlineHeart } from "react-icons/ai";
 
-export const TweetCardDetails = ({ tweet, handleDelete, handleAddLikes }) => {
+export const TweetCardDetails = ({
+  tweet,
+  handleDeleteTweet,
+  handleAddLikes,
+}) => {
   return (
     <div className="tweetDetails">
       <div className="card_header">
@@ -21,8 +25,8 @@ export const TweetCardDetails = ({ tweet, handleDelete, handleAddLikes }) => {
       <p style={{ color: "#C0C0C0" }}> {tweet.content.dateTime}</p>
       <div style={{ alignContent: "bottom" }}>
         <div style={{ float: "right" }}>
-          <button onClick={handleDelete}>
-            <AiFillDelete />
+          <button onClick={handleDeleteTweet}>
+            <AiFillDelete style={{ cursor: "pointer" }} />
           </button>
         </div>
 
@@ -35,9 +39,14 @@ export const TweetCardDetails = ({ tweet, handleDelete, handleAddLikes }) => {
           }}
         >
           <button onClick={handleAddLikes}>
-            <AiOutlineHeart />
+            <AiOutlineHeart style={{ cursor: "pointer" }} />
           </button>
-          <p>{tweet.content.likes}</p>
+          <p>
+            {tweet.content.liked === true
+              ? tweet.content.likes++
+              : tweet.content.likes}
+          </p>
+          <p>{tweet.content.liked ? "liked" : "notLiked" }</p>
         </div>
       </div>
     </div>

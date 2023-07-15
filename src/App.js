@@ -5,7 +5,7 @@ import { useTweets } from "./hooks/useTweets";
 
 function App() {
   const { tweetList, setTweetList } = useTweets();
-  const { handleAddTweet, handleDelete, handleAddLikes } = useHandleTweets({tweetList,setTweetList});
+  const { handleAddTweet, handleDeleteTweet, handleAddLikes } = useHandleTweets({tweetList,setTweetList});
 
   return (
     <div className="App">
@@ -14,7 +14,7 @@ function App() {
       {tweetList && tweetList.length > 0 ? (
         <TweetContainer 
           tweetList={tweetList}
-          handleDelete={handleDelete}
+          handleDeleteTweet={handleDeleteTweet}
           handleAddLikes={handleAddLikes}
         />
       ) : (

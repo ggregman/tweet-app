@@ -26,7 +26,7 @@ export const useHandleTweets = ({tweetList,setTweetList}) => {
         setTweetList(tempTweet);
       };
     
-      const handleDelete = (index) => {
+      const handleDeleteTweet = (index) => {
         const tempTweet = [...tweetList];
         tempTweet.splice(index, 1);
         setTweetList(tempTweet);
@@ -35,10 +35,11 @@ export const useHandleTweets = ({tweetList,setTweetList}) => {
       const handleAddLikes = (id) => {
         const tempTweet = [...tweetList];
         tempTweet.map((tweet) =>
-          tweet.id === id ? { ...tweet, likes: tweet.content.likes++ } : tweet
+          tweet.id === id ? { ...tweet, liked: !tweet.content.liked } : tweet
         );
+        console.log(id)
         setTweetList(tempTweet);
       };
 
-  return {handleAddTweet, handleDelete, handleAddLikes}
+  return {handleAddTweet, handleDeleteTweet, handleAddLikes}
 }

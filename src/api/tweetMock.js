@@ -18,6 +18,7 @@ export const tweetMock = [
         .setLocale("en")
         .toFormat("hh:mm a · yyyy MMM, dd"),
       likes: 500,
+      liked: false
     },
   },
   {
@@ -37,6 +38,7 @@ export const tweetMock = [
         .setLocale("en")
         .toFormat("hh:mm a · yyyy MMM, dd"),
       likes: 20,
+      liked: false
     },
   },
   {
@@ -56,6 +58,7 @@ export const tweetMock = [
         .setLocale("en")
         .toFormat("hh:mm a · yyyy MMM, dd"),
       likes: 249,
+      liked: false
     },
   },
 ];
